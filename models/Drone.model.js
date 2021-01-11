@@ -5,7 +5,8 @@ const Schema = mongoose.Schema;
 const droneSchema = new Schema({
     name: String,
     propellers: Number,
-    maxSpeed: Number
+    maxSpeed: Number,
+    image: String
 })
 
 const Drone = mongoose.model("Drone", droneSchema)

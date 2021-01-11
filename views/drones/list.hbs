@@ -2,6 +2,21 @@
 
 {{#each drones as | drone |}}
 
-<h1>Name: {{drone.name}}</h1>
+<div class="container mb-3">
+    <div class="card">
+        <img class="card-img-top" src="{{ drone.image }}">
+        
+        <div class="card-body">
+            <h2>{{ drone.name }}</h2>
+            <h3>Propellers: {{ drone.propellers }}</h3>
+            <h3>Max.Speed: {{ drone.maxSpeed }}</h3>
+            <form action="/drones/{{ drone.id }}/delete" method="post">
+                <a class="btn btn-primary mr-3" href="/drones/{{drone.id}}/edit"><i class="fa fa-cog mr-2"></i> Edit</a>
+                <button type="submit" class="btn btn-danger"><i class="fa fa-trash mr-2"></i> Delete</button>
+            </form>
+        </div>
 
+        
+    </div>
+</div>
 {{/each}}
